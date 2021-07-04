@@ -1,0 +1,123 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.itens-container {
+    flex-grow: 1;
+    display: inline-block;
+}
+
+header {
+    background: rgba(161, 161, 161, 0.945);
+    padding: 20px 0;
+}
+
+.caixa-superior {
+    position: relative;
+    margin: 0 auto;
+}
+
+.img-logo-caixa-superior {
+    padding: 30px;
+}
+nav {
+    position: absolute;
+    top: 110px;
+    right: 0;
+    padding-right: 30px;
+}
+
+nav li {
+    display: inline;
+    margin: 0 0 0 15px;
+}
+
+nav a {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: rgb(156, 11, 223);
+    text-decoration: underline;
+}
+
+main {
+    background-color: gray;
+    background-size: 100% auto;
+}
+
+.principal {
+    padding: 3em 0;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.principal p {
+    line-height: 22px;
+    margin: 0 0 1em;
+}
+
+.principal strong {
+    font-weight: bold;
+}
+
+.principal em {
+    font-style: italic;
+}
+
+.img-footer {
+    width: 100px;
+}
+
+footer {
+    background-color: rgba(161, 161, 161, 0.945);;
+    text-align: center;
+    padding: 20px;
+}
+
+.copyright {
+    color: #FFFFFF;
+    font-size: 13px;
+    position: relative;
+    bottom: -5px;
+}
+
+/* css da página inicial */
+
+.titulo-principal {
+    text-align: center;
+    font-size: 2em;
+    margin: 0 0 1em;
+    clear: left;
+}
+
+@media screen and (max-width: 480px) {
+    .caixa-superior, .principal, .conteudo-skills {
+        width: auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        position: static;
+    }
+
+    .lista-skills, .imagem-skills {
+        width: 100%;
+    }
+}
