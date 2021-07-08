@@ -33,7 +33,7 @@ header {
 }
 nav {
     position: absolute;
-    top: 110px;
+    top: 130px;
     right: 0;
     padding-right: 30px;
 }
@@ -78,6 +78,20 @@ main {
 
 .principal em {
     font-style: italic;
+}
+
+.texto-plataformas-principal{
+    display: inline-block;
+}
+
+.saudacoes-principal {
+    padding: 0px 30px 30px 30px;
+}
+
+.img-plataformas-principal {
+    float: left;
+    margin: 0px 30px 30px 30px;
+    max-width: 200px;
 }
 
 .img-footer {
