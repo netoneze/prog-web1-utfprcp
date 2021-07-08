@@ -9,6 +9,8 @@ body {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+    padding: 0;
+    max-width: unset;
 }
 
 .itens-container {
@@ -95,8 +97,6 @@ footer {
     bottom: -5px;
 }
 
-/* css da página inicial */
-
 .titulo-principal {
     text-align: center;
     font-size: 2em;
@@ -105,7 +105,7 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
-    .caixa-superior, .principal, .conteudo-skills {
+    .caixa-superior, .principal {
         width: auto;
     }
 
@@ -115,9 +115,5 @@ footer {
 
     nav {
         position: static;
-    }
-
-    .lista-skills, .imagem-skills {
-        width: 100%;
     }
 }
