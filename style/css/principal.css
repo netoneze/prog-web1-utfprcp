@@ -94,6 +94,10 @@ main {
     max-width: 200px;
 }
 
+.login-input {
+    text-align: center;
+}
+
 .img-footer {
     width: 100px;
 }
