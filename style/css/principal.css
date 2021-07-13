@@ -68,16 +68,8 @@ main {
 }
 
 .principal p {
-    line-height: 22px;
     margin: 0 0 1em;
-}
-
-.principal strong {
-    font-weight: bold;
-}
-
-.principal em {
-    font-style: italic;
+    font-size: 22px;
 }
 
 .texto-plataformas-principal{
@@ -94,7 +86,7 @@ main {
     max-width: 200px;
 }
 
-.login-input {
+.login-input-text {
     text-align: center;
 }
 
