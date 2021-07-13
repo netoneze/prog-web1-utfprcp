@@ -25,21 +25,18 @@
 </header>
 <main class="item-container">
     <div class="principal">
-        <div class="login-input">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="Usuario">Login</span>
-                </div>
-                <input type="text" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="Usuario">
+        <form>
+            <div class="form-group">
+                <label for="InputUsuario">Usuário</label>
+                <input type="text" class="form-control" id="InputUsuario" placeholder="Digite seu usuário">
             </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="Senha">Senha</span>
-                </div>
-                <input type="text" class="form-control" placeholder="Senha" aria-label="Senha" aria-describedby="Senha">
+            <div class="form-group">
+                <label for="InputSenha">Senha</label>
+                <input type="password" class="form-control" id="InputSenha" placeholder="Digite sua senha">
             </div>
-            <span><p>Digite seu usuário e senha para entrar</p></span>
-        </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+        <span><p class="login-input-text">Digite seu usuário e senha para entrar</p></span>
     </div>
 </main>
 <footer class="item-container">
