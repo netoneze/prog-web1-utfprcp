@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../style/css/principal.css">
+  <link rel="icon" href="../../img/logo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Classroom</title>
+  <style>
+    .nav-atual {
+      font-size: 26px;
+    }
+  </style>
+</head>
+<body class="container">
+<header class="item-container">
+  <div class="caixa-superior">
+    <img onclick="refreshPage()" src="../../img/logo.png" class="img-logo-caixa-superior" alt="Logotipo EADúvida" title="Logotipo superior EADúvida">
+    <nav>
+      <ul>
+        <li><a href="../../index.html">Início</a></li>
+        <li><a href="../../login.html">Login</a></li>
+        <li><a href="../../tutoriais.html" class="nav-atual">Tutoriais</a></li>
+        <li><a href="../../contato.html">Contato</a></li>
+        <li><a href="../../sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main class="item-container">
+  <div class="principal">
+    <div class="comunicar-aluno">
+      <h2 class="titulo-principal">Se comunicar com o professor</h2>
+      <p>&nbsp Se o professor permitir, você poderá se comunicar com a turma na página "Mural" usando estas opções:</p>
+      <ul>
+        <li><strong>Postagem:</strong> informações ou uma pergunta que você adiciona no mural da turma.
+          <p>Exemplo: <em>Quando é a visita ao museu?</em></p>
+        </li>
+        <li><strong>Comentário:</strong> uma resposta a uma postagem ou um comentário.
+          <p>Exemplo: <em>Vamos na próxima sexta-feira.</em></p>
+        </li>
+        <li data-outlined="false" class=""><strong>Resposta:</strong> uma resposta a um comentário que menciona a pessoa que fez o comentário.
+          <p data-outlined="false" class="">Exemplo: <em>+nome de quem comentou Obrigado!</em></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>
+<footer class="item-container">
+  <img class="img-footer" src="../../img/logo.png" alt="Logotipo EADúvida" title="Logotipo footer">
+  <p class="copyright">Copyright EADúvida - 2021</p>
+</footer>
+<script>
+  function refreshPage() {
+    document.location.reload(true);
+  }
+</script>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="" crossorigin="anonymous"></script>
