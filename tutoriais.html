@@ -11,7 +11,7 @@
 <body class="container">
 <header class="item-container">
   <div class="caixa-superior">
-    <img src="img/logo.png" class="img-logo-caixa-superior">
+    <img onclick="refreshPage()" src="img/logo.png" class="img-logo-caixa-superior" alt="LogoSuperior">
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -145,15 +145,13 @@
   <img class="img-footer" src="img/logo.png" title="Logotipo-Footer">
   <p class="copyright">Copyright EADúvida - 2021</p>
 </footer>
+<script>
+  function refreshPage() {
+    document.location.reload(true);
+  }
+</script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script type="text/javascript">
-  // $(document).ready(function (e) {
-  //   $('.btn-link').click(function() {
-  //     $('.collapse').collapse()
-  //   });
-  // });
-</script>
 </body>
 </html>

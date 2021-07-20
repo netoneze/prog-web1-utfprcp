@@ -11,7 +11,7 @@
 <body class="container">
 <header class="item-container">
   <div class="caixa-superior">
-    <img src="img/logo.png" class="img-logo-caixa-superior">
+    <img onclick="refreshPage()" src="img/logo.png" class="img-logo-caixa-superior" alt="LogoSuperior">
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -52,6 +52,11 @@
   <img class="img-footer" src="img/logo.png" title="Logotipo-Footer">
   <p class="copyright">Copyright EADúvida - 2021</p>
 </footer>
+<script>
+  function refreshPage() {
+    document.location.reload(true);
+  }
+</script>
 </body>
 </html>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
