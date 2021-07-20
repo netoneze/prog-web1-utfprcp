@@ -59,6 +59,7 @@ nav a:hover {
 main {
     background-color: gray;
     background-size: 100% auto;
+    min-height: 650px;
 }
 
 .principal {
