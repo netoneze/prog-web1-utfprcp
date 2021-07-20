@@ -1,7 +1,5 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
 .container {
@@ -31,6 +29,7 @@ header {
 .img-logo-caixa-superior {
     padding: 30px;
 }
+
 nav {
     position: absolute;
     top: 130px;
