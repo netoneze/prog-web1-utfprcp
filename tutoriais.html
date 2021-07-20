@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style/css/principal.css">
   <link rel="icon" href="img/logo.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>Tutoriais</title>
+  <style>
+    .nav-atual {
+      font-size: 26px;
+    }
+  </style>
 </head>
 <body class="container">
 <header class="item-container">
@@ -14,9 +22,9 @@
     <img onclick="refreshPage()" src="img/logo.png" class="img-logo-caixa-superior" alt="LogoSuperior">
     <nav>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html">Início</a></li>
         <li><a href="login.html">Login</a></li>
-        <li><a href="tutoriais.html">Tutoriais</a></li>
+        <li><a href="tutoriais.html" class="nav-atual">Tutoriais</a></li>
         <li><a href="contato.html">Contato</a></li>
         <li><a href="sobre.html">Sobre</a></li>
       </ul>
@@ -37,6 +45,9 @@
             </h5>
           </div>
           <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="btn-fechar">
+              <button class="btn btn-light btn-sm">Fechar</button>
+            </div>
             <div class="card-body">
               <span class="badge badge-secondary">Geral</span>
               <div class="list-group">
@@ -70,6 +81,9 @@
             </h5>
           </div>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="btn-fechar">
+              <button class="btn btn-light btn-sm">Fechar</button>
+            </div>
             <div class="card-body">
               <span class="badge badge-secondary">Básico</span>
               <div class="list-group">
@@ -104,6 +118,9 @@
             </h5>
           </div>
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="btn-fechar">
+              <button class="btn btn-light btn-sm">Fechar</button>
+            </div>
             <div class="card-body">
               <span class="badge badge-secondary">Geral</span>
               <div class="list-group">
@@ -125,6 +142,9 @@
             </h5>
           </div>
           <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+            <div class="btn-fechar">
+              <button class="btn btn-light btn-sm">Fechar</button>
+            </div>
             <div class="card-body">
               <span class="badge badge-secondary">Geral</span>
               <div class="list-group">
@@ -146,12 +166,15 @@
   <p class="copyright">Copyright EADúvida - 2021</p>
 </footer>
 <script>
+  $(document).ready(function(){
+    $(".btn-fechar").click(function(){
+      var collapse = $(this).closest(".collapse");
+      $(collapse).collapse('toggle');
+    });
+  });
   function refreshPage() {
     document.location.reload(true);
   }
 </script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

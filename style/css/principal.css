@@ -115,6 +115,11 @@ footer {
     clear: left;
 }
 
+.btn-fechar {
+    margin: 8px 8px 0 0;
+    text-align: right;
+}
+
 @media screen and (max-width: 480px) {
     .caixa-superior, .principal {
         width: auto;

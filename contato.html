@@ -7,6 +7,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>Contato</title>
+  <style>
+    .nav-atual {
+      font-size: 26px;
+    }
+  </style>
 </head>
 <body class="container">
 <header class="item-container">
@@ -14,10 +19,10 @@
     <img onclick="refreshPage()" src="img/logo.png" class="img-logo-caixa-superior" alt="LogoSuperior">
     <nav>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html">Início</a></li>
         <li><a href="login.html">Login</a></li>
         <li><a href="tutoriais.html">Tutoriais</a></li>
-        <li><a href="contato.html">Contato</a></li>
+        <li><a href="contato.html" class="nav-atual">Contato</a></li>
         <li><a href="sobre.html">Sobre</a></li>
       </ul>
     </nav>
@@ -26,6 +31,7 @@
 <main class="item-container">
   <div class="principal">
     <div class="contato-form">
+      <h2 class="titulo-principal">Entre em contato</h2>
       <form action="mailto:netoneze@hotmail.com" method="post" enctype="text/plain">
         <div class="form-group">
           <label for="FormControlInputNome">Nome</label>
