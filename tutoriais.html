@@ -19,7 +19,7 @@
 <body class="container">
 <header class="item-container">
   <div class="caixa-superior">
-    <img onclick="refreshPage()" src="img/logo.png" class="img-logo-caixa-superior" alt="LogoSuperior">
+    <img onclick="refreshPage()" src="img/logo.png" class="img-logo-caixa-superior" alt="Logotipo EADúvida" title="Logotipo superior EADúvida">
     <nav>
       <ul>
         <li><a href="index.html">Início</a></li>
@@ -37,11 +37,9 @@
       <h2 class="titulo-principal">Tutoriais</h2>
       <div id="accordion">
         <div class="card">
-          <div class="card-header" id="headingOne">
+          <div class="card-header collapsed btn btn-group btn-light" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                Google Classroom
-              </button>
+              Google Classroom
             </h5>
           </div>
           <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
@@ -73,11 +71,9 @@
           </div>
         </div>
         <div class="card">
-          <div class="card-header" id="headingTwo">
+          <div class="card-header collapsed btn btn-group btn-light" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Google Meet
-              </button>
+              Google Meet
             </h5>
           </div>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -110,11 +106,9 @@
           </div>
         </div>
         <div class="card">
-          <div class="card-header" id="headingThree">
+          <div class="card-header collapsed btn btn-group btn-light" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Jamboard
-              </button>
+              Jamboard
             </h5>
           </div>
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
@@ -134,11 +128,9 @@
           </div>
         </div>
         <div class="card">
-          <div class="card-header" id="headingFour">
+          <div class="card-header collapsed btn btn-group btn-light" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                Kahoot!
-              </button>
+              Kahoot!
             </h5>
           </div>
           <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
@@ -157,12 +149,13 @@
             </div>
           </div>
         </div>
+        <span><p class="help-text">Clique para expandir</p></span>
       </div>
     </div>
   </div>
 </main>
 <footer class="item-container">
-  <img class="img-footer" src="img/logo.png" title="Logotipo-Footer">
+  <img class="img-footer" src="img/logo.png" alt="Logotipo EADúvida" title="Logotipo footer">
   <p class="copyright">Copyright EADúvida - 2021</p>
 </footer>
 <script>

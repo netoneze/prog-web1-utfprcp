@@ -87,7 +87,8 @@ main {
     max-width: 200px;
 }
 
-.login-input-text {
+.help-text {
+    padding: 10px;
     text-align: center;
 }
 
