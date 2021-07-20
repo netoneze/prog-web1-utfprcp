@@ -57,7 +57,7 @@ nav a:hover {
 }
 
 main {
-    background-color: gray;
+    background-color: #949494;
     background-size: 100% auto;
     min-height: 650px;
 }
@@ -68,7 +68,7 @@ main {
     margin: 0 auto;
 }
 
-.principal p {
+.principal p, ol {
     margin: 0 0 1em;
     font-size: 22px;
 }
