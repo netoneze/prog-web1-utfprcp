@@ -55,7 +55,7 @@
 <script>
     $(document).ready(function(){
         $('#btnEntrar').click(function(){
-            if(document.forms['formLogin'].name.value !== "" && document.forms['formLogin'].senha.value !== "") {
+            if(document.forms['formLogin'].login.value !== "" && document.forms['formLogin'].senha.value !== "") {
                 $('.principal').remove();
                 $('#itemPrincipal').append(
                     $('<div>').prop({
