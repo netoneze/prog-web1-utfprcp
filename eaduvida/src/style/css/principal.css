@@ -1,0 +1,135 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    max-width: unset;
+}
+
+.itens-container {
+    flex-grow: 1;
+    display: inline-block;
+}
+
+header {
+    background: rgba(161, 161, 161, 0.945);
+    padding: 20px 0;
+}
+
+.caixa-superior {
+    position: relative;
+    margin: 0 auto;
+}
+
+.img-logo-caixa-superior {
+    padding: 30px;
+}
+
+nav {
+    position: absolute;
+    top: 130px;
+    right: 0;
+    padding-right: 30px;
+}
+
+nav li {
+    display: inline;
+    margin: 0 0 0 15px;
+}
+
+nav a {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: rgb(156, 11, 223);
+    text-decoration: underline;
+}
+
+main {
+    background-color: #949494;
+    background-size: 100% auto;
+    min-height: 650px;
+}
+
+.principal {
+    padding: 3em 0;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.principal p, ol {
+    margin: 0 0 1em;
+    font-size: 22px;
+}
+
+.texto-plataformas-principal{
+    display: inline-block;
+}
+
+.saudacoes-principal {
+    padding: 0px 30px 30px 30px;
+}
+
+.img-plataformas-principal {
+    float: left;
+    margin: 0px 30px 30px 30px;
+    max-width: 200px;
+}
+
+.help-text {
+    padding: 10px;
+    text-align: center;
+}
+
+.img-footer {
+    width: 100px;
+}
+
+footer {
+    background-color: rgba(161, 161, 161, 0.945);;
+    text-align: center;
+    padding: 20px;
+}
+
+.copyright {
+    color: #FFFFFF;
+    font-size: 13px;
+    position: relative;
+    bottom: -5px;
+}
+
+.titulo-principal {
+    text-align: center;
+    font-size: 2em;
+    margin: 0 0 1em;
+    clear: left;
+}
+
+.btn-fechar {
+    margin: 8px 8px 0 0;
+    text-align: right;
+}
+
+@media screen and (max-width: 480px) {
+    .caixa-superior, .principal {
+        width: auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        position: static;
+    }
+}
