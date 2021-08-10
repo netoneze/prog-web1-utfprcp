@@ -4,12 +4,14 @@ import './style/css/principal.css'
 
 /* Páginas */
 import Home from './view/home';
+import Login from './view/login';
 
 function App() {
   return (
       <>
       <Router>
           <Route exact path='/' component={Home}/>
+          <Route exact path='/login' component={Login}/>
       </Router>
       </>
   );
