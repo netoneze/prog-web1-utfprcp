@@ -12,7 +12,7 @@ function NavBar(){
                         <ul>
                             <li><Link to="/" className="nav-atual">Início</Link></li>
                             <li><Link to="/login">Login</Link></li>
-                            <li><Link to="tutoriais.html">Tutoriais</Link></li>
+                            <li><Link to="/tutorial">Tutoriais</Link></li>
                             <li><Link to="/contato">Contato</Link></li>
                             <li><Link to="sobre.html">Sobre</Link></li>
                         </ul>

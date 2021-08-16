@@ -6,6 +6,7 @@ import './style/css/principal.css'
 import Home from './view/home';
 import Login from './view/login';
 import Contato from './view/contato';
+import Tutorial from './view/tutorial';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path='/' component={Home}/>
           <Route exact path='/login' component={Login}/>
           <Route exact path='/contato' component={Contato}/>
+          <Route exact path='/tutorial' component={Tutorial}/>
       </Router>
       </>
   );
