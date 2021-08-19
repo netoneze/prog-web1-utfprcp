@@ -11,6 +11,7 @@ import Contato from './view/contato';
 import Tutorial from './view/tutorial';
 import Sobre from './view/sobre';
 import NewUser from "./view/newUser";
+import LostPassword from "./view/lostpassword";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route exact path='/tutorial' component={Tutorial}/>
           <Route exact path='/sobre' component={Sobre}/>
           <Route exact path='/cadastro' component={NewUser}/>
+          <Route exact path='/recuperar'component={LostPassword}/>
       </Router>
       </Provider>
       </>
