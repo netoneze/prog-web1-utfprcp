@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import firebase from '../../config/firebase';
 import 'firebase/auth';
 import NavBar from "../../components/navbar";
-
+import Footer from "../../components/footer";
 function NewUser(){
 
     const [email, setEmail] = useState();
@@ -40,6 +40,7 @@ function NewUser(){
                     <span><p className="help-text">Digite um email e senha para fazer o cadastro</p></span>
                 </div>
             </main>
+            <Footer />
         </>
     )
 }

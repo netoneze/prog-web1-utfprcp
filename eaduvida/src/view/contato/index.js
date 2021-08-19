@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from "../../components/navbar";
+import Footer from "../../components/footer";
 function Contato(){
     return (
         <>
@@ -33,6 +34,7 @@ function Contato(){
                     </div>
                 </div>
             </main>
+            <Footer />
         </>
     )
 }

@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import firebase from '../../config/firebase';
 import 'firebase/auth';
 import NavBar from "../../components/navbar";
+import Footer from "../../components/footer";
 import {useDispatch, useSelector} from "react-redux";
 import {Link, Redirect} from "react-router-dom";
 
@@ -55,6 +56,7 @@ function Login() {
                     </div>
                 </div>
             </main>
+            <Footer />
         </>
     );
 }

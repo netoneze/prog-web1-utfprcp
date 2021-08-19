@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import NavBar from "../../components/navbar";
-
+import Footer from "../../components/footer";
 function Sobre(){
     return (
         <>
@@ -35,6 +35,7 @@ function Sobre(){
                     </div>
                 </div>
             </main>
+            <Footer />
         </>
     )
 }
