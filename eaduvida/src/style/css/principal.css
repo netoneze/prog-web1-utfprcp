@@ -120,6 +120,9 @@ footer {
     text-align: right;
 }
 
+.nomeUsuarioTopo {
+    margin: 20px;
+}
 @media screen and (max-width: 480px) {
     .caixa-superior, .principal {
         width: auto;

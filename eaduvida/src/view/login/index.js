@@ -3,16 +3,20 @@ import React, {useState} from "react";
 import firebase from '../../config/firebase';
 import 'firebase/auth';
 import NavBar from "../../components/navbar";
+import {useDispatch, useSelector} from "react-redux";
 
 function Login() {
 
     const [email, setEmail] = useState();
     const [senha, setSenha] = useState();
 
+    const dispath = useDispatch();
+
     function autenticar() {
         firebase.auth().signInWithEmailAndPassword(email, senha)
             .then(retultado => {
                 alert("Login realizado!");
+                dispath({type: 'LOGIN', usuarioEmail: email})
             })
             .catch(erro => {
                 alert(erro);

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Logo from '../../img/logo.png';
+import {useSelector} from "react-redux";
 
 function NavBar(){
     return (
@@ -17,6 +18,9 @@ function NavBar(){
                             <li><Link to="/sobre">Sobre</Link></li>
                         </ul>
                     </nav>
+            </div>
+            <div className="nomeUsuarioTopo">
+                <p>{useSelector(state => state.usuarioEmail)}</p>
             </div>
         </header>
     )
