@@ -38,7 +38,7 @@ nav {
 }
 
 nav li {
-    display: inline;
+    display: inline-flex;
     margin: 0 0 0 15px;
 }
 
