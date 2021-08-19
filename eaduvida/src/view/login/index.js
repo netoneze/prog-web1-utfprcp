@@ -4,6 +4,7 @@ import firebase from '../../config/firebase';
 import 'firebase/auth';
 import NavBar from "../../components/navbar";
 import {useDispatch, useSelector} from "react-redux";
+import {Redirect} from "react-router-dom";
 
 function Login() {
 
@@ -25,6 +26,9 @@ function Login() {
 
     return (
         <>
+            {
+                useSelector(state => state.usuarioLogado) > 0 ? <Redirect to="/"/> : null
+            }
             <NavBar />
             <main className="item-container" id="itemPrincipal">
                 <div className="principal">
