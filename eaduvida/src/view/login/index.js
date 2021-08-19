@@ -4,7 +4,7 @@ import firebase from '../../config/firebase';
 import 'firebase/auth';
 import NavBar from "../../components/navbar";
 import {useDispatch, useSelector} from "react-redux";
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 function Login() {
 
@@ -46,7 +46,13 @@ function Login() {
                         </div>
                         <button onClick={autenticar} type="button" className="btn btn-primary" id="btnEntrar">Entrar</button>
                     </form>
-                    <span><p className="help-text">Digite seu usuário e senha para entrar</p></span>
+                    <div className="help-text">
+                        <p className="help-text">Digite seu usuário e senha para entrar</p>
+                        <span>
+                            <p className="help-text"><Link to="/cadastro">Cadastrar</Link></p>
+                            <p className="help-text"><Link to="/recuperarSenha">Recuperar Senha</Link></p>
+                        </span>
+                    </div>
                 </div>
             </main>
         </>

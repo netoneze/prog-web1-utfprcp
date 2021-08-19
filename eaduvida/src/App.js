@@ -10,6 +10,7 @@ import Login from './view/login';
 import Contato from './view/contato';
 import Tutorial from './view/tutorial';
 import Sobre from './view/sobre';
+import NewUser from "./view/newUser";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path='/contato' component={Contato}/>
           <Route exact path='/tutorial' component={Tutorial}/>
           <Route exact path='/sobre' component={Sobre}/>
+          <Route exact path='/cadastro' component={NewUser}/>
       </Router>
       </Provider>
       </>

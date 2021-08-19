@@ -91,6 +91,21 @@ main {
     text-align: center;
 }
 
+.help-text > span {
+    position: relative;
+    display: inline-flex;
+    bottom: 25px;
+}
+
+.help-text > span > p > a{
+    color: black;
+}
+
+.help-text > span > p > a:hover{
+    color: rgb(156, 11, 223);
+    text-decoration: underline;
+}
+
 .img-footer {
     width: 100px;
 }
