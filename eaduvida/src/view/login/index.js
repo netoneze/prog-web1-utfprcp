@@ -12,13 +12,13 @@ function Login() {
     const [email, setEmail] = useState();
     const [senha, setSenha] = useState();
 
-    const dispath = useDispatch();
+    const dispatch = useDispatch();
 
     function autenticar() {
         firebase.auth().signInWithEmailAndPassword(email, senha)
             .then(retultado => {
                 alert("Login realizado!");
-                dispath({type: 'LOGIN', usuarioEmail: email})
+                dispatch({type: 'LOGIN', usuarioEmail: email});
             })
             .catch(erro => {
                 alert(erro);
@@ -36,7 +36,7 @@ function Login() {
                     <h2 className="titulo-principal">Entrar</h2>
                     <form name="formLogin">
                         <div className="form-group">
-                            <label htmlFor="InputUsuario">Usuário</label>
+                            <label htmlFor="InputUsuario">Email</label>
                             <input onChange={(e) => setEmail(e.target.value)} name="login" type="email" className="form-control" id="InputUsuario"
                                    placeholder="Digite seu usuário" required/>
                         </div>
@@ -51,7 +51,7 @@ function Login() {
                         <p className="help-text">Digite seu usuário e senha para entrar</p>
                         <span>
                             <p className="help-text"><Link to="/cadastro">Cadastrar</Link></p>
-                            <p className="help-text"><Link to="/recuperarSenha">Recuperar Senha</Link></p>
+                            <p className="help-text"><Link to="/recuperar">Recuperar Senha</Link></p>
                         </span>
                     </div>
                 </div>
