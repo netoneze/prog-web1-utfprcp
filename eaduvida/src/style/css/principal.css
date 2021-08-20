@@ -30,6 +30,10 @@ header {
     padding: 30px;
 }
 
+.img-usuario-perfil {
+    max-width: 250px;
+}
+
 nav {
     position: absolute;
     top: 130px;
