@@ -11,17 +11,20 @@ function Login() {
 
     const [email, setEmail] = useState();
     const [senha, setSenha] = useState();
-
+    const [spinner, setSpinner] = useState(false);
     const dispatch = useDispatch();
 
     function autenticar() {
+        setSpinner(true);
         firebase.auth().signInWithEmailAndPassword(email, senha)
             .then(retultado => {
                 alert("Login realizado!");
+                setSpinner(false);
                 dispatch({type: 'LOGIN', usuarioEmail: email});
             })
             .catch(erro => {
                 alert(erro);
+                setSpinner(false);
             });
     }
 
@@ -45,7 +48,15 @@ function Login() {
                             <input onChange={(e) => setSenha(e.target.value)} name="senha" type="password" className="form-control" id="InputSenha"
                                    placeholder="Digite sua senha" required/>
                         </div>
-                        <button onClick={autenticar} type="button" className="btn btn-primary" id="btnEntrar">Entrar</button>
+                        {
+                            spinner ?
+                                <button className="btn btn-primary" type="button" disabled>
+                                    <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"/>
+                                    &nbsp;Carregando...
+                                </button>
+                                :
+                                <button onClick={autenticar} type="button" className="btn btn-primary" id="btnEntrar">Entrar</button>
+                        }
                     </form>
                     <div className="help-text">
                         <p className="help-text">Digite seu usuário e senha para entrar</p>

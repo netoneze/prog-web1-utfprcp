@@ -10,24 +10,32 @@ function Perfil(){
 
     const [imagem, setImagem] = useState();
     const [nomeUsuario, setNomeUsuario] = useState();
+    const [spinner, setSpinner] = useState(false);
 
     const storage = firebase.storage();
     const db = firebase.firestore();
     const emailUsuario = useSelector(state => state.usuarioEmail)
 
     function salvar(){
-        storage.ref(`imagens/${imagem.name}`).put(imagem).then(() => {
-            db.collection('usuarios').add({
-                nome: nomeUsuario,
-                usuarioEmail: emailUsuario,
-                imagem: imagem.name
-            }).then(() => {
-                alert("Modificações salvas com sucesso!");
-                return [$('#imagem-usuario')[0].reset(), $('#nome-usuario').val('')]
-            }).catch(erro => {
-                alert(erro);
-            })
-        });
+        if(imagem != null && $('#nome-usuario').val() !== '') {
+            setSpinner(true);
+            storage.ref(`imagens/${imagem.name}`).put(imagem).then(() => {
+                db.collection('usuarios').add({
+                    nome: nomeUsuario,
+                    usuarioEmail: emailUsuario,
+                    imagem: imagem.name
+                }).then(() => {
+                    alert("Modificações salvas com sucesso!");
+                    setSpinner(false);
+                    return [$('#imagem-usuario')[0].reset(), $('#nome-usuario').val('')];
+                }).catch(erro => {
+                    setSpinner(false);
+                    alert(erro);
+                })
+            });
+        } else {
+            alert("Existem campos vazios!")
+        }
     }
 
     return (
@@ -56,7 +64,15 @@ function Perfil(){
                                    placeholder="Digite um nome de usuário" required/>
                         </div>
                         <div className="text-center">
-                            <button type="button" onClick={salvar} className="btn btn-lg btn-primary my-2" >Salvar</button>
+                            {
+                                spinner ?
+                                    <button className="btn btn-lg btn-primary" type="button" disabled>
+                                        <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"/>
+                                        &nbsp;Carregando...
+                                    </button>
+                                    :
+                                    <button type="button" onClick={salvar} className="btn btn-lg btn-primary my-2" >Salvar</button>
+                            }
                         </div>
                     </form>
                     <span><p className="help-text">Personalize seu perfil de usuário</p></span>
