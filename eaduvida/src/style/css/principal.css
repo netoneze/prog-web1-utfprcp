@@ -34,8 +34,13 @@ header {
     max-width: 250px;
 }
 
+.img-usuario-perfil-canto {
+    max-width: 50px;
+}
+
 nav {
-    position: absolute;
+    margin-top: auto;
+    margin-left: auto;
     top: 130px;
     right: 0;
     padding-right: 30px;
@@ -140,7 +145,14 @@ footer {
 }
 
 .nomeUsuarioTopo {
+    position: absolute;
+    top: 0;
+    right: 0;
     margin: 20px;
+}
+
+.spanNomeUsuario {
+    margin-top: auto;
 }
 @media screen and (max-width: 480px) {
     .caixa-superior, .principal {

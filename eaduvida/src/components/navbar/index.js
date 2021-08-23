@@ -1,18 +1,30 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import Logo from '../../img/logo.png';
 import {useDispatch, useSelector} from "react-redux";
-
+import userImgDefault from '../../img/user.png';
 function NavBar(){
     const dispatch = useDispatch();
+    const usuarioLogado = useSelector(state => state.usuarioLogado);
+    const usuarioEmail = useSelector(state => state.usuarioEmail);
 
     return (
         <header className="item-container">
-            <div className="caixa-superior">
+            <div className="caixa-superior row">
                 <img src={Logo} className="img-logo-caixa-superior"
                      alt="Logotipo EADúvida" title="Logotipo superior EADúvida"/>
                     <nav>
                         <ul>
+                            <li className="nomeUsuarioTopo">
+                                {
+                                    usuarioLogado > 0 ?
+                                        <span className="spanNomeUsuario mx-1">{usuarioEmail}</span>
+                                        :
+                                        <span className="spanNomeUsuario mx-1">Você não está logado</span>
+                                }
+                                <br/>
+                                <img className="img-thumbnail img-usuario-perfil-canto" src={userImgDefault} alt="Imagem de usuário"/>
+                            </li>
                             {
                                 useSelector(state => state.usuarioLogado) > 0 ?
                                     <>
@@ -43,9 +55,6 @@ function NavBar(){
                             }
                         </ul>
                     </nav>
-            </div>
-            <div className="nomeUsuarioTopo">
-                <p>{useSelector(state => state.usuarioEmail)}</p>
             </div>
         </header>
     )
