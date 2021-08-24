@@ -2,19 +2,24 @@ import React, {useState} from "react";
 
 import firebase from '../../config/firebase';
 import 'firebase/auth';
+import $ from "jquery";
 function NewUser(){
 
     const [email, setEmail] = useState();
     const [senha, setSenha] = useState();
 
     function cadastrar(){
-        firebase.auth().createUserWithEmailAndPassword(email, senha)
-            .then(retultado => {
-                alert("Cadastro realizado!");
-            })
-            .catch(erro => {
-                alert(erro);
-            });
+        if ($('#InputUsuario').val() !== '' && $('#InputSenha').val() !== '') {
+            firebase.auth().createUserWithEmailAndPassword(email, senha)
+                .then(resultado => {
+                    alert("Cadastro realizado!");
+                })
+                .catch(erro => {
+                    alert(erro);
+                });
+        } else {
+            alert("Existem campos vazios!");
+        }
     }
     return(
         <>

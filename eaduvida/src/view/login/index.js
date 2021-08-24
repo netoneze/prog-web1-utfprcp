@@ -4,6 +4,7 @@ import firebase from '../../config/firebase';
 import 'firebase/auth';
 import {useDispatch, useSelector} from "react-redux";
 import {Link, Redirect} from "react-router-dom";
+import $ from 'jquery';
 
 function Login() {
 
@@ -13,17 +14,21 @@ function Login() {
     const dispatch = useDispatch();
 
     function autenticar() {
-        setSpinner(true);
-        firebase.auth().signInWithEmailAndPassword(email, senha)
-            .then(retultado => {
-                alert("Login realizado!");
-                setSpinner(false);
-                dispatch({type: 'LOGIN', usuarioEmail: email});
-            })
-            .catch(erro => {
-                alert(erro);
-                setSpinner(false);
-            });
+        if ($('#InputUsuario').val() !== '' && $('#InputSenha').val() !== '') {
+            setSpinner(true);
+            firebase.auth().signInWithEmailAndPassword(email, senha)
+                .then(retultado => {
+                    alert("Login realizado!");
+                    setSpinner(false);
+                    dispatch({type: 'LOGIN', usuarioEmail: email});
+                })
+                .catch(erro => {
+                    alert(erro);
+                    setSpinner(false);
+                });
+        } else {
+            alert("Existem campos vazios!")
+        }
     }
 
     return (
@@ -38,7 +43,7 @@ function Login() {
                         <div className="form-group">
                             <label htmlFor="InputUsuario">Email</label>
                             <input onChange={(e) => setEmail(e.target.value)} name="login" type="email" className="form-control" id="InputUsuario"
-                                   placeholder="Digite seu usuário" required/>
+                                   placeholder="Digite seu email" required/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="InputSenha">Senha</label>
@@ -56,7 +61,7 @@ function Login() {
                         }
                     </form>
                     <div className="help-text">
-                        <p className="help-text">Digite seu usuário e senha para entrar</p>
+                        <p className="help-text">Digite seu email e senha para entrar</p>
                         <span>
                             <p className="help-text"><Link to="/cadastro">Cadastrar</Link></p>
                             <p className="help-text"><Link to="/recuperar">Recuperar Senha</Link></p>
