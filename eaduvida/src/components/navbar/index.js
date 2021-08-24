@@ -3,10 +3,22 @@ import {Link} from 'react-router-dom';
 import Logo from '../../img/logo.png';
 import {useDispatch, useSelector} from "react-redux";
 import userImgDefault from '../../img/user.png';
+import firebase from "firebase";
 function NavBar(){
     const dispatch = useDispatch();
     const usuarioLogado = useSelector(state => state.usuarioLogado);
     const usuarioEmail = useSelector(state => state.usuarioEmail);
+    const [imgUsuario, setImgUsuario] = useState();
+
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged(user => {
+            if (user){
+                firebase.storage().ref('users/' + user.uid + '/profile.jpg').getDownloadURL().then(imgUrl => {
+                    setImgUsuario(imgUrl);
+                })
+            }
+        })
+    })
 
     return (
         <header className="item-container">
@@ -23,7 +35,7 @@ function NavBar(){
                                         <span className="spanNomeUsuario mx-1">Você não está logado</span>
                                 }
                                 <br/>
-                                <img className="img-thumbnail img-usuario-perfil-canto" src={userImgDefault} alt="Imagem de usuário"/>
+                                <img className="img-thumbnail img-usuario-perfil-canto" src={imgUsuario ? imgUsuario : userImgDefault} alt="Imagem de usuário"/>
                             </li>
                             {
                                 useSelector(state => state.usuarioLogado) > 0 ?
