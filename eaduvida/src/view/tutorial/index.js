@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function Tutorial(){
     return (
@@ -24,11 +25,11 @@ function Tutorial(){
                                     <div className="card-body">
                                         <span className="badge badge-secondary">Geral</span>
                                         <div className="list-group">
-                                            <a href="pages/classroom/conhecer.html"
+                                            <Link to="/classroom/conhecer"
                                                className="list-group-item list-group-item-action">Conhecer o Google Sala
-                                                de Aula</a>
-                                            <a href="pages/classroom/primeiros_passos.html"
-                                               className="list-group-item list-group-item-action">Primeiros passos</a>
+                                                de Aula</Link>
+                                            <Link to="/classroom/primeiros_passos"
+                                               className="list-group-item list-group-item-action">Primeiros passos</Link>
                                             <a href="pages/classroom/privacidade.html"
                                                className="list-group-item list-group-item-action">Privacidade, políticas
                                                 e abuso</a>
@@ -36,9 +37,9 @@ function Tutorial(){
                                         <br/>
                                         <span className="badge badge-secondary">Alunos</span>
                                         <div className="list-group">
-                                            <a href="pages/classroom/participar_aluno.html"
+                                            <Link to="/classroom/alunos/participar"
                                                className="list-group-item list-group-item-action">Participar e
-                                                organizar suas turmas</a>
+                                                organizar suas turmas</Link>
                                             <a href="pages/classroom/entregar_aluno.html"
                                                className="list-group-item list-group-item-action">Entregar e
                                                 acompanhar as atividades</a>
@@ -49,9 +50,9 @@ function Tutorial(){
                                         <br/>
                                         <span className="badge badge-secondary">Professores</span>
                                         <div className="list-group">
-                                            <a href="pages/classroom/criar_turma.html"
+                                            <Link to="/classroom/professores/criar"
                                                className="list-group-item list-group-item-action">Criar,
-                                                participar e organizar suas turmas</a>
+                                                participar e organizar suas turmas</Link>
                                             <a href="pages/classroom/criar_atividade.html"
                                                className="list-group-item list-group-item-action">Criar,
                                                 acompanhar e atribuir notas às atividades</a>
@@ -77,9 +78,9 @@ function Tutorial(){
                                     <div className="card-body">
                                         <span className="badge badge-secondary">Básico</span>
                                         <div className="list-group">
-                                            <a href="pages/meet/iniciar_chamada.html"
+                                            <Link to="/meet/iniciar"
                                                className="list-group-item list-group-item-action">Iniciar uma
-                                                videochamada</a>
+                                                videochamada</Link>
                                             <a href="pages/meet/participar_videochamada.html"
                                                className="list-group-item list-group-item-action">Participar de uma
                                                 videochamada</a>
@@ -128,9 +129,9 @@ function Tutorial(){
                                     <div className="card-body">
                                         <span className="badge badge-secondary">Geral</span>
                                         <div className="list-group">
-                                            <a href="pages/jamboard/criar_jam.html"
+                                            <Link to="/jamboard/criar"
                                                className="list-group-item list-group-item-action">Crie a salve um
-                                                board</a>
+                                                board</Link>
                                             <a href="#" className="list-group-item list-group-item-action">Insira
                                                 imagens</a>
                                             <a href="#" className="list-group-item list-group-item-action">Adicione
@@ -158,9 +159,9 @@ function Tutorial(){
                                     <div className="card-body">
                                         <span className="badge badge-secondary">Geral</span>
                                         <div className="list-group">
-                                            <a href="pages/kahoot/criar_kahoot.html"
+                                            <Link to="/kahoot/criar"
                                                className="list-group-item list-group-item-action">Criar um kahoot com
-                                                perguntas</a>
+                                                perguntas</Link>
                                             <a href="#" className="list-group-item list-group-item-action">Adicionar
                                                 imagens e respostas</a>
                                             <a href="#" className="list-group-item list-group-item-action">Como
