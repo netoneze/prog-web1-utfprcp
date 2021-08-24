@@ -17,14 +17,14 @@ function Login() {
         if ($('#InputUsuario').val() !== '' && $('#InputSenha').val() !== '') {
             setSpinner(true);
             firebase.auth().signInWithEmailAndPassword(email, senha)
-                .then(retultado => {
-                    alert("Login realizado!");
+                .then(resultado => {
                     setSpinner(false);
+                    alert("Login realizado!");
                     dispatch({type: 'LOGIN', usuarioEmail: email});
                 })
                 .catch(erro => {
-                    alert(erro);
                     setSpinner(false);
+                    alert(erro);
                 });
         } else {
             alert("Existem campos vazios!")
