@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import User from '../../img/user.png'
+import React, {useEffect, useState} from "react";
+import userImgDefault from '../../img/user.png'
 import firebase from "firebase";
 import NavBar from "../../components/navbar";
 import Footer from "../../components/footer";
@@ -10,28 +10,49 @@ function Perfil(){
 
     const [imagem, setImagem] = useState();
     const [nomeUsuario, setNomeUsuario] = useState();
+    const [nomeUsuarioBd, setNomeUsuarioBd] = useState();
     const [spinner, setSpinner] = useState(false);
 
     const storage = firebase.storage();
     const db = firebase.firestore();
-    const emailUsuario = useSelector(state => state.usuarioEmail)
+    const [imgUsuario, setImgUsuario] = useState();
+    const emailUsuario = useSelector(state => state.usuarioEmail);
+
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged(user => {
+            if (user){
+                firebase.storage().ref('users/' + user.uid + '/profile.jpg').getDownloadURL().then(imgUrl => {
+                    setImgUsuario(imgUrl);
+                })
+            }
+        })
+        firebase.firestore().collection('usuarios').where('usuarioEmail', '==', emailUsuario).get().then(async (resultado) => {
+            await resultado.docs.forEach( doc => {
+                setNomeUsuarioBd(doc.data().nome);
+            })
+        })
+    })
+
 
     function salvar(){
         if(imagem != null && $('#nome-usuario').val() !== '') {
             setSpinner(true);
-            storage.ref(`imagens/${imagem.name}`).put(imagem).then(() => {
-                db.collection('usuarios').add({
-                    nome: nomeUsuario,
-                    usuarioEmail: emailUsuario,
-                    imagem: imagem.name
-                }).then(() => {
-                    alert("Modificações salvas com sucesso!");
-                    setSpinner(false);
-                    return [$('#imagem-usuario')[0].reset(), $('#nome-usuario').val('')];
-                }).catch(erro => {
-                    setSpinner(false);
-                    alert(erro);
-                })
+            storage.ref('users/' + firebase.auth().currentUser.uid + '/profile.jpg').put(imagem).then(() => {
+                return !nomeUsuarioBd ?
+                    db.collection('usuarios').add({
+                        nome: nomeUsuario,
+                        usuarioEmail: emailUsuario,
+                        imagem: imagem.name
+                    }).then(() => {
+                        alert("Modificações salvas com sucesso!");
+                        setSpinner(false);
+                        return [$('#imagem-usuario')[0].reset(), $('#nome-usuario').val('')];
+                    }).catch(erro => {
+                        setSpinner(false);
+                        alert(erro);
+                    })
+                    :
+                    [alert("apenas imagem modified!"), setSpinner(false)]
             });
         } else {
             alert("Existem campos vazios!")
@@ -52,7 +73,7 @@ function Perfil(){
                             <div className="text-center">
                                 <label className="help-text">Imagem de usuário</label>
                             </div>
-                            <img src={User} className="img-usuario-perfil img-thumbnail rounded mx-auto d-block" alt="Imagem de usuário"/>
+                            <img src={imgUsuario ? imgUsuario : userImgDefault} className="img-usuario-perfil img-thumbnail rounded mx-auto d-block" alt="Imagem de usuário"/>
                         </div>
                         <form id="imagem-usuario" className="form-group">
                             <label>Upload de imagem:</label>
@@ -61,7 +82,7 @@ function Perfil(){
                         <div className="form-group">
                             <label htmlFor="InputUsuario">Nome de usuário</label>
                             <input onChange={(e) => setNomeUsuario(e.target.value)} name="nome" type="text" className="form-control" id="nome-usuario"
-                                   placeholder="Digite um nome de usuário" required/>
+                                   placeholder="Digite um nome de usuário" value={nomeUsuarioBd ? nomeUsuarioBd : ''} required/>
                         </div>
                         <div className="text-center">
                             {
