@@ -42,15 +42,15 @@ function Perfil(){
                         usuarioEmail: emailUsuario,
                         imagem: imagem.name
                     }).then(() => {
-                        alert("Modificações salvas com sucesso!");
                         setSpinner(false);
+                        alert("Modificações salvas com sucesso!");
                         return [$('#imagem-usuario')[0].reset(), $('#nome-usuario').val('')];
                     }).catch(erro => {
                         setSpinner(false);
                         alert(erro);
                     })
                     :
-                    [alert("apenas imagem modified!"), setSpinner(false)]
+                    [alert("apenas imagem modificada!"), setSpinner(false)]
             });
         } else {
             alert("Existem campos vazios!")
@@ -79,7 +79,7 @@ function Perfil(){
                         <div className="form-group">
                             <label htmlFor="InputUsuario">Nome de usuário</label>
                             <input onChange={(e) => setNomeUsuario(e.target.value)} name="nome" type="text" className="form-control" id="nome-usuario"
-                                   placeholder="Digite um nome de usuário" value={nomeUsuarioBd ? nomeUsuarioBd : ''} required/>
+                                   placeholder="Digite um nome de usuário" value={nomeUsuarioBd ? nomeUsuarioBd : null} required/>
                         </div>
                         <div className="text-center">
                             {
