@@ -44,7 +44,7 @@ function Perfil(){
                     }).then(() => {
                         setSpinner(false);
                         alert("Modificações salvas com sucesso!");
-                        return [$('#imagem-usuario')[0].reset(), $('#nome-usuario').val('')];
+                        return [$('#imagem-usuario')[0].reset(), $('#nome-usuario').val(''), window.location.reload()];
                     }).catch(erro => {
                         setSpinner(false);
                         alert(erro);
