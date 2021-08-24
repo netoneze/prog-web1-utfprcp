@@ -11,13 +11,11 @@ function NavBar(){
     const [imgUsuario, setImgUsuario] = useState();
 
     useEffect(() => {
-        firebase.auth().onAuthStateChanged(user => {
-            if (user){
-                firebase.storage().ref('users/' + user.uid + '/profile.jpg').getDownloadURL().then(imgUrl => {
-                    setImgUsuario(imgUrl);
-                })
-            }
-        })
+        if (firebase.auth().currentUser){
+            firebase.storage().ref('users/' + firebase.auth().currentUser.uid + '/profile.jpg').getDownloadURL().then(imgUrl => {
+                setImgUsuario(imgUrl);
+            })
+        }
     })
 
     return (
@@ -35,7 +33,7 @@ function NavBar(){
                                         <span className="spanNomeUsuario mx-1">Você não está logado</span>
                                 }
                                 <br/>
-                                <img className="img-thumbnail img-usuario-perfil-canto" src={imgUsuario ? imgUsuario : userImgDefault} alt="Imagem de usuário"/>
+                                <img className="img-thumbnail img-usuario-perfil-canto" src={usuarioLogado > 0 ? imgUsuario : userImgDefault} alt="Imagem de usuário"/>
                             </li>
                             {
                                 useSelector(state => state.usuarioLogado) > 0 ?
