@@ -7,19 +7,23 @@ import {useSelector} from "react-redux";
 
 function LostPassword(){
     const [senha, setSenha] = useState();
+    const [spinner, setSpinner] = useState(false);
 
     function recuperar(){
-        if(!senha) {
-            alert("campo vazio!");
-            return;
+        if(senha) {
+            setSpinner(true);
+            firebase.auth().sendPasswordResetEmail(senha)
+                .then(resultado => {
+                    setSpinner(false);
+                    alert("Um email de recuperação foi enviado para o seu email");
+                })
+                .catch(erro => {
+                    setSpinner(false);
+                    alert(erro);
+                });
+        } else {
+            alert("Campo vazio!")
         }
-        firebase.auth().sendPasswordResetEmail(senha)
-            .then(resultado => {
-                alert("Um email de recuperação foi enviado para o seu email");
-            })
-            .catch(erro => {
-                alert(erro);
-            });
     }
 
     return (
