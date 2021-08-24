@@ -33,7 +33,7 @@ function NavBar(){
                                         <span className="spanNomeUsuario mx-1">Você não está logado</span>
                                 }
                                 <br/>
-                                <img className="img-thumbnail img-usuario-perfil-canto" src={usuarioLogado > 0 ? imgUsuario : userImgDefault} alt="Imagem de usuário"/>
+                                <img className="img-thumbnail img-usuario-perfil-canto" src={imgUsuario !== null && usuarioLogado > 0 ? imgUsuario : userImgDefault} alt="Imagem de usuário"/>
                             </li>
                             {
                                 useSelector(state => state.usuarioLogado) > 0 ?
