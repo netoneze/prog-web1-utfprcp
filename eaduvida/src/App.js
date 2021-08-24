@@ -5,6 +5,7 @@ import {Provider} from "react-redux";
 import {store, persistor} from "./store";
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
+import {PersistGate} from "redux-persist/integration/react";
 
 /* Páginas */
 import Home from './view/home';
@@ -15,7 +16,15 @@ import Sobre from './view/sobre';
 import NewUser from "./view/newUser";
 import LostPassword from "./view/lostpassword";
 import Perfil from "./view/perfil";
-import {PersistGate} from "redux-persist/integration/react";
+import Conhecer from "./view/tutorial/classroom/geral/conhecer";
+import CriarClassroom from "./view/tutorial/classroom/professores/criar";
+import Participar from "./view/tutorial/classroom/alunos/participar";
+import PrimeirosPassos from "./view/tutorial/classroom/geral/primeiros_passos";
+import CriarKahoot from "./view/tutorial/kahoot/criar";
+import CriarJamboard from "./view/tutorial/jamboard/geral/criar";
+import Iniciar from "./view/tutorial/meet/basico/iniciar";
+
+
 function App() {
   return (
       <>
@@ -29,8 +38,15 @@ function App() {
                   <Route exact path='/tutorial' component={Tutorial}/>
                   <Route exact path='/sobre' component={Sobre}/>
                   <Route exact path='/cadastro' component={NewUser}/>
-                  <Route exact path='/recuperar'component={LostPassword}/>
+                  <Route exact path='/recuperar' component={LostPassword}/>
                   <Route exact path='/perfil' component={Perfil}/>
+                  <Route exact path='/classroom/conhecer' component={Conhecer}/>
+                  <Route exact path='/classroom/primeiros_passos' component={PrimeirosPassos}/>
+                  <Route exact path='/classroom/professores/criar' component={CriarClassroom}/>
+                  <Route exact path='/classroom/alunos/participar' component={Participar}/>
+                  <Route exact path='/kahoot/criar' component={CriarKahoot}/>
+                  <Route exact path='/jamboard/criar' component={CriarJamboard}/>
+                  <Route exact path='/meet/iniciar' component={Iniciar}/>
                   <Footer />
               </Router>
           </PersistGate>
