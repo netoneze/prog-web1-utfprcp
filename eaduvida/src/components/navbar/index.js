@@ -7,7 +7,8 @@ import firebase from "firebase";
 function NavBar(){
     const dispatch = useDispatch();
     const usuarioLogado = useSelector(state => state.usuarioLogado);
-    const usuarioEmail = useSelector(state => state.usuarioEmail);
+    const emailUsuario = useSelector(state => state.usuarioEmail);
+    const [nomeUsuario, setNomeUsuario] = useState();
     const [imgUsuario, setImgUsuario] = useState();
 
     useEffect(() => {
@@ -16,6 +17,11 @@ function NavBar(){
                 setImgUsuario(imgUrl);
             })
         }
+        firebase.firestore().collection('usuarios').where('usuarioEmail', '==', emailUsuario).get().then(async (resultado) => {
+            await resultado.docs.forEach( doc => {
+                setNomeUsuario(doc.data().nome);
+            })
+        })
     })
 
     return (
@@ -28,12 +34,12 @@ function NavBar(){
                             <li className="nomeUsuarioTopo">
                                 {
                                     usuarioLogado > 0 ?
-                                        <span className="spanNomeUsuario mx-1">{usuarioEmail}</span>
+                                        <span className="spanNomeUsuario mx-1">{nomeUsuario ? nomeUsuario : emailUsuario}</span>
                                         :
                                         <span className="spanNomeUsuario mx-1">Você não está logado</span>
                                 }
                                 <br/>
-                                <img className="img-thumbnail img-usuario-perfil-canto" src={imgUsuario !== null && usuarioLogado > 0 ? imgUsuario : userImgDefault} alt="Imagem de usuário"/>
+                                <img className="img-thumbnail img-usuario-perfil-canto" src={imgUsuario ? imgUsuario : userImgDefault} alt="Imagem de usuário"/>
                             </li>
                             {
                                 useSelector(state => state.usuarioLogado) > 0 ?
@@ -47,7 +53,7 @@ function NavBar(){
                                             </a>
                                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                                 <Link className="dropdown-item" to="/perfil">Perfil</Link>
-                                                <Link className="dropdown-item" onClick={() => dispatch({type: 'LOGOUT'})}>Sair</Link>
+                                                <Link className="dropdown-item" onClick={() => [dispatch({type: 'LOGOUT'}), window.location.reload()]}>Sair</Link>
                                             </div>
                                         </li>
                                         <li><Link to="/tutorial">Tutoriais</Link></li>
