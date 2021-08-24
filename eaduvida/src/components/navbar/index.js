@@ -62,7 +62,7 @@ function NavBar(){
                                     </>
                                     :
                                     <>
-                                        <li><Link to="/" className="nav-atual">Início</Link></li>
+                                        <li><Link to="/">Início</Link></li>
                                         <li><Link to="/login">Login</Link></li>
                                         <li><Link to="/tutorial">Tutoriais</Link></li>
                                         <li><Link to="/contato">Contato</Link></li>
