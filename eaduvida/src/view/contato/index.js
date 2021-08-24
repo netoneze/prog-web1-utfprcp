@@ -1,10 +1,8 @@
 import React from 'react';
-import NavBar from "../../components/navbar";
-import Footer from "../../components/footer";
+
 function Contato(){
     return (
         <>
-            <NavBar />
             <main className="item-container">
                 <div className="principal">
                     <div className="contato-form">
@@ -34,7 +32,6 @@ function Contato(){
                     </div>
                 </div>
             </main>
-            <Footer />
         </>
     )
 }

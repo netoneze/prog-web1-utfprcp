@@ -3,8 +3,6 @@ import {useState} from "react";
 import {Redirect} from "react-router-dom";
 import firebase from "../../config/firebase";
 import 'firebase/auth';
-import NavBar from "../../components/navbar";
-import Footer from "../../components/footer";
 import {useSelector} from "react-redux";
 
 function LostPassword(){
@@ -29,7 +27,6 @@ function LostPassword(){
             {
                 useSelector(state => state.usuarioLogado) > 0 ? <Redirect to="/"/> : null
             }
-            <NavBar />
             <main className="item-container" id="itemPrincipal">
                 <div className="principal">
                     <h2 className="titulo-principal">Recuperar senha</h2>
@@ -46,7 +43,6 @@ function LostPassword(){
                     </div>
                 </div>
             </main>
-            <Footer />
         </>
     )
 }

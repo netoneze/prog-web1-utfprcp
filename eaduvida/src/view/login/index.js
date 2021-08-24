@@ -2,8 +2,6 @@ import React, {useState} from "react";
 
 import firebase from '../../config/firebase';
 import 'firebase/auth';
-import NavBar from "../../components/navbar";
-import Footer from "../../components/footer";
 import {useDispatch, useSelector} from "react-redux";
 import {Link, Redirect} from "react-router-dom";
 
@@ -33,7 +31,6 @@ function Login() {
             {
                 useSelector(state => state.usuarioLogado) > 0 ? <Redirect to="/"/> : null
             }
-            <NavBar />
             <main className="item-container" id="itemPrincipal">
                 <div className="principal">
                     <h2 className="titulo-principal">Entrar</h2>
@@ -67,7 +64,6 @@ function Login() {
                     </div>
                 </div>
             </main>
-            <Footer />
         </>
     );
 }

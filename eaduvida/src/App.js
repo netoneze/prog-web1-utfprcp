@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import './style/css/principal.css'
 import {Provider} from "react-redux";
 import {store, persistor} from "./store";
+import NavBar from "./components/navbar";
+import Footer from "./components/footer";
 
 /* Páginas */
 import Home from './view/home';
@@ -20,6 +22,7 @@ function App() {
       <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
               <Router>
+                  <NavBar />
                   <Route exact path='/' component={Home}/>
                   <Route exact path='/login' component={Login}/>
                   <Route exact path='/contato' component={Contato}/>
@@ -28,6 +31,7 @@ function App() {
                   <Route exact path='/cadastro' component={NewUser}/>
                   <Route exact path='/recuperar'component={LostPassword}/>
                   <Route exact path='/perfil' component={Perfil}/>
+                  <Footer />
               </Router>
           </PersistGate>
       </Provider>

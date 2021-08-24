@@ -1,10 +1,8 @@
 import React from 'react';
-import NavBar from "../../components/navbar";
-import Footer from "../../components/footer";
+
 function Tutorial(){
     return (
         <>
-            <NavBar />
             <main className="item-container">
                 <div className="principal">
                     <div className="tutoriais">
@@ -180,7 +178,6 @@ function Tutorial(){
                     </div>
                 </div>
             </main>
-            <Footer />
         </>
     )
 }

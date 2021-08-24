@@ -1,6 +1,4 @@
 import React from 'react';
-import NavBar from '../../components/navbar';
-import Footer from "../../components/footer";
 import LogoClassRoom from '../../img/google-classroom-logo-1.png';
 import LogoMeet from '../../img/google-meet-logo-1.png';
 import LogoJamboard from '../../img/jamboard-logo-1.png';
@@ -9,7 +7,6 @@ import LogoKahoot from '../../img/kahoot-logo-1.png';
 function Home(){
     return (
         <>
-            <NavBar />
             <main className="item-container">
                 <div className="principal">
                     <div className="saudacoes-principal">
@@ -51,7 +48,6 @@ function Home(){
                     </div>
                 </div>
             </main>
-            <Footer />
         </>
     )
 }

@@ -1,11 +1,9 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import NavBar from "../../components/navbar";
-import Footer from "../../components/footer";
+
 function Sobre(){
     return (
         <>
-            <NavBar />
             <main className="item-container">
                 <div className="principal">
                     <div className="sobre">
@@ -35,7 +33,6 @@ function Sobre(){
                     </div>
                 </div>
             </main>
-            <Footer />
         </>
     )
 }

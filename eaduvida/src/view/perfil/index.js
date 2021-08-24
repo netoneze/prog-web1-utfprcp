@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from "react";
 import userImgDefault from '../../img/user.png'
 import firebase from "firebase";
-import NavBar from "../../components/navbar";
-import Footer from "../../components/footer";
 import {useSelector} from "react-redux";
 import {Redirect} from "react-router-dom";
 import $ from 'jquery';
@@ -64,7 +62,6 @@ function Perfil(){
             {
                 useSelector(state => state.usuarioLogado) === 0 ? <Redirect to='/'/> : null
             }
-            <NavBar />
             <main className="item-container" id="itemPrincipal">
                 <div className="principal">
                     <h2 className="titulo-principal">Perfil</h2>
@@ -99,7 +96,6 @@ function Perfil(){
                     <span><p className="help-text">Personalize seu perfil de usuário</p></span>
                 </div>
             </main>
-            <Footer />
         </>
     )
 }
